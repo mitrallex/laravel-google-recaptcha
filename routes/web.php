@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FeedbackController@create');
+Route::get('/feedback', 'FeedbackController@index');
+Route::post('/feedback/create', 'FeedbackController@store');
+Route::get('/feedback/delete/{id}', 'FeedbackController@destroy');
